@@ -1,0 +1,91 @@
+{
+    "Query1": [
+        {
+            "title": "La Cienaga",
+            "genres": "['Comedy', 'Drama']"
+        },
+        {
+            "title": "Burnt Money",
+            "genres": "['Crime']"
+        },
+        {
+            "title": "The City of No Limits",
+            "genres": "['Thriller', 'Drama']"
+        },
+        {
+            "title": "Nicotina",
+            "genres": "['Drama', 'Action', 'Comedy', 'Thriller']"
+        },
+        {
+            "title": "Lost Embrace",
+            "genres": "['Drama', 'Foreign']"
+        },
+        {
+            "title": "Whisky",
+            "genres": "['Comedy', 'Drama', 'Foreign']"
+        }
+    ],
+    "Query2": {
+        "United States of America": 53192629312,
+        "United Kingdom": 532639856,
+        "France": 406491063,
+        "Japan": 224529791,
+        "Canada": 149010297
+    },
+    "Query3": {
+        "max": {
+            "title": "Gerry",
+            "rating": 4.25
+        },
+        "min": {
+            "title": "Dancer in the Dark",
+            "rating": 3.6875
+        }
+    },
+    "Query4": [
+        {
+            "name": "Daniel Hendler",
+            "count": 2
+        },
+        {
+            "name": "Jean Pierre Noher",
+            "count": 2
+        },
+        {
+            "name": "Leonardo Sbaraglia",
+            "count": 2
+        },
+        {
+            "name": "Leticia Br\u00e9dice",
+            "count": 2
+        },
+        {
+            "name": "Marina Glezer",
+            "count": 2
+        },
+        {
+            "name": "Mercedes Mor\u00e1n",
+            "count": 2
+        },
+        {
+            "name": "Natalia Lobo",
+            "count": 2
+        },
+        {
+            "name": "Ricardo Dar\u00edn",
+            "count": 2
+        },
+        {
+            "name": "Ricardo D\u00edaz Mourelle",
+            "count": 2
+        },
+        {
+            "name": "Sofia Bertolotto",
+            "count": 2
+        }
+    ],
+    "Query5": {
+        "NEGATIVE": 10324.083663540443,
+        "POSITIVE": 6938.578074783732
+    }
+}

@@ -1,0 +1,13 @@
+log:
+  level: "DEBUG"
+
+data:
+  movies: ".data/movies_head_10k.csv"
+  ratings: ".data/ratings_head_10k.csv"
+  credits: ".data/credits_head_10k.csv"
+
+server:
+  address: "proxy:12345"
+
+batch:
+  maxSize: 81920 # 80KB

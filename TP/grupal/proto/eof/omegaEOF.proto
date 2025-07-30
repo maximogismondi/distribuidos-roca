@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message OmegaEOF {
+    message Data {
+        string stage = 1;
+        uint32 tasksCount = 2;
+        string eofType = 3;
+    }
+
+    Data data = 1;
+}

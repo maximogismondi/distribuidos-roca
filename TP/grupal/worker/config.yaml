@@ -1,0 +1,3 @@
+log:
+  level: "DEBUG"
+cleanUpTime: 600

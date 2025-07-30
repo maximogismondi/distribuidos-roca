@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+import "proto/stages/alpha.proto";
+import "proto/stages/beta.proto";
+import "proto/stages/gamma.proto";
+import "proto/stages/delta.proto";
+import "proto/stages/epsilon.proto";
+import "proto/stages/zeta.proto";
+import "proto/stages/eta.proto";
+import "proto/stages/theta.proto";
+import "proto/stages/iota.proto";
+import "proto/stages/kappa.proto";
+import "proto/stages/lambda.proto";
+import "proto/stages/mu.proto";
+import "proto/stages/nu.proto";
+import "proto/results/result1.proto";
+import "proto/results/result2.proto";
+import "proto/results/result3.proto";
+import "proto/results/result4.proto";
+import "proto/results/result5.proto";
+import "proto/eof/omegaEOF.proto";
+import "proto/eof/ringEOF.proto";
+
+message TaskIdentifier {
+    string creatorId = 1;
+    uint32 taskNumber = 2;
+    uint32 taskFragmentNumber = 3;
+    bool lastFragment = 4;
+}
+
+message Task {
+    oneof Stage {
+        Alpha alpha = 1;
+        Beta beta = 2;
+        Gamma gamma = 3;
+        Delta_1 delta_1 = 4;
+        Delta_2 delta_2 = 5;
+        Delta_3 delta_3 = 6;
+        Epsilon epsilon = 7;
+        Zeta zeta = 8;
+        Eta_1 eta_1 = 9;
+        Eta_2 eta_2 = 10;
+        Eta_3 eta_3 = 11;
+        Theta theta = 12;
+        Iota iota = 13;
+        Kappa_1 kappa_1 = 14;
+        Kappa_2 kappa_2 = 15;
+        Kappa_3 kappa_3 = 16;
+        Lambda lambda = 17;
+        Mu mu = 18;
+        Nu_1 nu_1 = 19;
+        Nu_2 nu_2 = 20;
+        Nu_3 nu_3 = 21;
+        Result1 result1 = 22;
+        Result2 result2 = 23;
+        Result3 result3 = 24;
+        Result4 result4 = 25;
+        Result5 result5 = 26;
+        OmegaEOF omegaEOF = 27;
+        RingEOF ringEOF = 28;
+    }
+    
+    string clientId = 29;
+    TaskIdentifier taskIdentifier = 30;
+    string tableType = 31;
+}

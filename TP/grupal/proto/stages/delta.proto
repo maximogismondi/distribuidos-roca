@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Delta_1 {
+    message Data {
+        string country = 1;
+        uint64 budget = 2;
+    }
+
+    repeated Data data = 1;
+}
+
+message Delta_2 {
+    message Data {
+        string country = 1;
+        uint64 partial_budget = 2;
+    }
+
+    repeated Data data = 1;
+}
+
+
+message Delta_3 {
+    message Data {
+        string country = 1;
+        uint64 partial_budget = 2;
+    }
+
+    repeated Data data = 1;
+}

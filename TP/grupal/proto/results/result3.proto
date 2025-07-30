@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+message Result3 {
+    message Data {
+        string type = 1;
+        string id = 2;
+        string title = 3;
+        float rating = 4;
+    }
+
+    repeated Data data = 1;
+}

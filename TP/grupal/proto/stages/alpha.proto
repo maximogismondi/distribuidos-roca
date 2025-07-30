@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Alpha {
+    message Data {
+        string id = 1;
+        repeated string prod_countries = 2;
+        string title = 3;
+        uint32 release_year = 4;
+        repeated string genres = 5;
+    }
+
+    repeated Data data = 1;
+}

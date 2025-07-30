@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+message PingRequest {}
+
+message PingResponse {
+    string container_name = 1;
+}
+
+message HealthMessage {
+    oneof message {
+        PingRequest ping_request = 2;
+        PingResponse ping_response = 3;
+    }
+}

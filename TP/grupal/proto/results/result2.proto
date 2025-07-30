@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+message Result2 {
+    message Data {
+        uint32 position = 1;
+        string country = 2;
+        uint64 total_investment = 3;
+    }
+
+    repeated Data data = 1;
+}

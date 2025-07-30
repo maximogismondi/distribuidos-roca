@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+message Result4 {
+    message Data {
+        uint32 position = 1;
+        string actorId = 2;
+        string actorName = 3;
+        uint64 participations = 4;
+    }
+
+    repeated Data data = 1;
+}

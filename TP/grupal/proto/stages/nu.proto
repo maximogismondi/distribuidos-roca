@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Nu_1 {
+    message Data {
+        string id = 1;
+        string title = 2;
+        uint64 revenue = 3;
+        uint64 budget = 4;
+        bool sentiment = 5; // 1 'POSITIVE', 0 'NEGATIVE'
+    }
+
+    repeated Data data = 1;
+}
+
+message Nu_2 {
+    message Data {
+        bool sentiment = 1; // 1 'POSITIVE', 0 'NEGATIVE'
+        float ratio = 2;
+        uint32 count = 3;
+    }
+
+    repeated Data data = 1;
+}
+
+message Nu_3 {
+    message Data {
+        bool sentiment = 1; // 1 'POSITIVE', 0 'NEGATIVE'
+        float ratio = 2;
+        uint32 count = 3;
+    }
+
+    repeated Data data = 1;
+}

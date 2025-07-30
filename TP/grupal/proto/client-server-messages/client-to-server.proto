@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+enum FileType {
+    MOVIES = 0;
+    CREDITS = 1;
+    RATINGS = 2;
+}
+
+message Sync {
+    string client_id = 1;
+}
+
+message Finish {
+    string client_id = 1;
+}
+
+message Disconnect {
+    string client_id = 1;
+}
+
+message Result {
+    string client_id = 1;
+}
+
+message Batch {
+    message Row {
+        string data = 1;
+    }
+
+    FileType type = 1;
+    repeated Row data = 2;
+    string client_id = 3;
+    uint32 batch_number = 4;
+}
+
+message FileEOF {
+    FileType type = 1;
+    uint32 batch_count = 2;
+    string client_id = 3;
+}
+
+message ClientServerMessage{
+    oneof message {
+        Batch batch = 1;
+        FileEOF file_eof = 2;
+        Sync sync = 3;
+        Finish finish = 4;
+        Result result = 5;
+        Disconnect disconnect = 6;
+    }
+}

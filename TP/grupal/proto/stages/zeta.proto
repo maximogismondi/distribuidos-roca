@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Zeta {
+    message Data {
+        message Movie {
+            string movieId = 1;
+            string title = 2;
+        }
+
+        message Rating {
+            string movieId = 1;
+            float rating = 2;
+        }
+
+        oneof data {
+            Movie movie = 1;
+            Rating rating = 2;
+        }
+    }
+
+    repeated Data data = 1;
+}

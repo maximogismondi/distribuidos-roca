@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Kappa_1 {
+    message Data {
+        string movieId = 1;
+        string actorId = 2;
+        string actorName = 3;
+    }
+
+    repeated Data data = 1;
+}
+
+message Kappa_2 {
+    message Data {
+        string actorId = 1;
+        string actorName = 2;
+        uint64 partial_participations = 3;
+    }
+
+    repeated Data data = 1;
+}
+
+message Kappa_3 {
+    message Data {
+        string actorId = 1;
+        string actorName = 2;
+        uint64 partial_participations = 3;
+    }
+
+    repeated Data data = 1;
+}

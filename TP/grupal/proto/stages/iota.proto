@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Iota {
+    message Data {
+        message Movie {
+            string movieId = 1;
+        }
+
+        message Actor {
+            string movieId = 1;
+            string actorId = 2;
+            string actorName = 3;
+        }
+
+        oneof data {
+            Movie movie = 1;
+            Actor actor = 2;
+        }
+    }
+
+    repeated Data data = 1;
+}

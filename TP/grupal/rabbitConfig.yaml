@@ -1,0 +1,286 @@
+consts:
+  filterExchange: "filterExchange"
+  overviewExchange: "overviewExchange"
+  mapExchange: "mapExchange"
+  joinExchange: "joinExchange"
+  reduceExchange: "reduceExchange"
+  mergeExchange: "mergeExchange"
+  topExchange: "topExchange"
+  resultExchange: "resultExchange"
+  eofExchange: "eofExchange"
+  parkingEofExchange: "parkingEofExchange"
+  controlExchange: "controlExchange"
+  healthExchange: "healthExchange"
+  broadcastId: ""
+
+  eofBroadcastRK: "eof"
+
+  controlBroadcastRK: "ping"
+
+  leaderRK: "leader"
+
+  clientQueueTTL: "3600000"
+
+rabbitmq:
+  SERVER:
+    exchanges:
+      filterExchange:
+        name: "filterExchange"
+        kind: "fanout"
+
+      overviewExchange:
+        name: "overviewExchange"
+        kind: "fanout"
+
+      joinExchange:
+        name: "joinExchange"
+        kind: "direct"
+
+      resultExchange:
+        name: "resultExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    binds:
+      resultQueue:
+        exchange: "resultExchange"
+
+  FILTER:
+    exchanges:
+      filterExchange:
+        name: "filterExchange"
+        kind: "fanout"
+
+      joinExchange:
+        name: "joinExchange"
+        kind: "direct"
+
+      mapExchange:
+        name: "mapExchange"
+        kind: "fanout"
+
+      resultExchange:
+        name: "resultExchange"
+        kind: "direct"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      filterQueue:
+        name: "filterQueue"
+
+    binds:
+      filterQueue:
+        exchange: "filterExchange"
+        queue: "filterQueue"
+
+  OVERVIEWER:
+    exchanges:
+      overviewExchange:
+        name: "overviewExchange"
+        kind: "fanout"
+
+      mapExchange:
+        name: "mapExchange"
+        kind: "fanout"
+
+      resultExchange:
+        name: "resultExchange"
+        kind: "direct"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      overviewQueue:
+        name: "overviewQueue"
+
+    binds:
+      overviewQueue:
+        exchange: "overviewExchange"
+        queue: "overviewQueue"
+
+  MAPPER:
+    exchanges:
+      mapExchange:
+        name: "mapExchange"
+        kind: "fanout"
+
+      reduceExchange:
+        name: "reduceExchange"
+        kind: "direct"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      mapQueue:
+        name: "mapQueue"
+
+    binds:
+      mapQueue:
+        exchange: "mapExchange"
+        queue: "mapQueue"
+
+  JOINER:
+    exchanges:
+      joinExchange:
+        name: "joinExchange"
+        kind: "direct"
+
+      mapExchange:
+        name: "mapExchange"
+        kind: "fanout"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      parkingEofExchange:
+        name: "parkingEofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      joinQueue:
+        name: ""
+
+    binds:
+      joinQueue:
+        exchange: "joinExchange"
+        queue: ""
+
+  REDUCER:
+    exchanges:
+      reduceExchange:
+        name: "reduceExchange"
+        kind: "direct"
+
+      mergeExchange:
+        name: "mergeExchange"
+        kind: "direct"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      parkingEofExchange:
+        name: "parkingEofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      reduceQueue:
+        name: ""
+
+    binds:
+      reduceQueue:
+        exchange: "reduceExchange"
+        queue: ""
+
+  MERGER:
+    exchanges:
+      mergeExchange:
+        name: "mergeExchange"
+        kind: "direct"
+
+      resultExchange:
+        name: "resultExchange"
+        kind: "direct"
+
+      topExchange:
+        name: "topExchange"
+        kind: "direct"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      parkingEofExchange:
+        name: "parkingEofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      mergeQueue:
+        name: ""
+
+    binds:
+      mergeQueue:
+        exchange: "mergeExchange"
+        queue: ""
+
+  TOPPER:
+    exchanges:
+      topExchange:
+        name: "topExchange"
+        kind: "direct"
+
+      resultExchange:
+        name: "resultExchange"
+        kind: "direct"
+
+      eofExchange:
+        name: "eofExchange"
+        kind: "direct"
+
+      parkingEofExchange:
+        name: "parkingEofExchange"
+        kind: "direct"
+
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+    queues:
+      topQueue:
+        name: ""
+
+    binds:
+      topQueue:
+        exchange: "topExchange"
+        queue: ""
+
+  HEALTH:
+    exchanges:
+      controlExchange:
+        name: "controlExchange"
+        kind: "direct"
+
+      healthExchange:
+        name: "healthExchange"
+        kind: "fanout"
+
+    queues:
+      leaderQueue:
+        name: "leaderQueue"
+
+

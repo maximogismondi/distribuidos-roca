@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+message Result5 {
+    message Data {
+        bool sentiment = 1;
+        float ratio = 2;    
+    }
+
+    repeated Data data = 1;
+}

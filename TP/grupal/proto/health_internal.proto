@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+message Status {
+    map<string, uint32> status = 1; // key: container_name, value: missed pings count
+}
+
+message Election {
+    string healtchecker_id = 1; // ID of the healthchecker that initiated the election
+}
+
+message Leader {
+    string leader_id = 1; // ID of the new leader
+}
+
+message HealthInternalMessage {
+    oneof message {
+        Status status = 1; // Contains the status of healthcheckers
+        Election election = 2; // Contains information about an election
+        Leader leader = 3; // Contains information about the new leader
+    }
+    string sender_id = 4; // ID of the sender of this message
+}

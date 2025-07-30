@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+message FragmentIdentifier {
+    uint32 taskNumber = 1;
+    uint32 taskFragmentNumber = 2;
+}
+
+message StageFragment {
+    string creatorId = 1;
+    FragmentIdentifier start = 2;
+    FragmentIdentifier end = 3;
+    bool lastFragment = 4;
+}
+
+message TaskCountByWorker {
+    string workerId = 1;
+    uint32 taskCount = 2;
+}
+
+message RingEOF {
+    string stage = 1;
+    string eofType = 2;
+    string creatorId = 3;
+    string readyId = 4;
+    uint32 tasksCount = 5;
+    uint32 roundNumber = 6;
+    repeated StageFragment stageFragmentes = 7;
+    repeated TaskCountByWorker nextStageTaskCountByWorker = 8;
+}

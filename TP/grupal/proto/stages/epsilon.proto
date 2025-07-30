@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Epsilon {
+    message Data {
+        string prod_country = 1;
+        uint64 total_investment = 2;
+    }
+
+    repeated Data data = 1;
+}

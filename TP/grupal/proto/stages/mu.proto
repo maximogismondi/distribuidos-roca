@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+
+
+message Mu {
+    message Data {
+        string id = 1;
+        string title = 2;
+        uint64 revenue = 3;
+        uint64 budget = 4;
+        string overview = 5;
+    }
+
+    repeated Data data = 1;
+}

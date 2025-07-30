@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "common/communication/protocol";
+
+import "proto/client-server-messages/client-to-server.proto";
+import "proto/client-server-messages/server-to-client.proto";
+
+
+message Message {
+    oneof message {
+        ClientServerMessage client_server_message = 1;
+        ServerClientMessage server_client_message = 2;
+    }
+}

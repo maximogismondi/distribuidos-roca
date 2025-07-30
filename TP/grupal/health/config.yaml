@@ -1,0 +1,6 @@
+healthCheckInterval: 500
+healthMaxStatus: 2
+healthElectionTimeout: 1000
+# healthCheckInterval << healthElectionTimeout
+log:
+    level: "debug"
